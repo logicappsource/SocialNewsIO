@@ -33,11 +33,40 @@ class User
         self.followedBy = followedBy
         self.profileImage = profileImage
     }
+    
+    
+    init(dictionary: [String : Any])
+    {
+        uid = dictionary["uid"] as! String
+        username = dictionary["username"] as! String
+        fullName = dictionary["fullname"] as! String
+        bio = dictionary["bio"] as! String
+        website = dictionary["website"] as! String
+        
+        //Follows
+        self.follows = []
+        if let followsDict = dictionary["follows"] as? [String: Any] {
+            for (_, userDict) in followsDict {
+                if let userDict = userDict as? [String: Any] {
+                    self.follows.append(User(dictionary: userDict))
+                }
+            }
+        }
+    
+        //FollowedBy
+        self.followedBy = []
+        if let followedByDict = dictionary["followedBy"] as? [String: Any] {
+            for (_ ,userDict) in followedByDict {
+                if let userDict = userDict as? [String: Any]{//Check if cast did succed
+                    self.followedBy.append(User(dictionary: userDict))
+                }
+            }
+        }
+    }
+
 
     
-
-    
-    func save()  {
+    func save(completion: @escaping (Error?) -> Void )  {
         
         //1. Reference pointing to Dict
         let ref = DTDatabaseReference.users(uid: uid).reference()
@@ -54,8 +83,12 @@ class User
         }
         
         //4. - save the profile image
-        
-        
+        if let profileImage = self.profileImage {
+            let firImage = FIRImage(image:profileImage)
+            firImage.saveProfileImage(self.uid, { (error) in
+                completion(error)
+            })
+        }
     }
 
     func toDictionary() -> [String: Any] { //Return to dict

@@ -20,10 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6E61E72B1F41865C00BBA89F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E61E72F1F4191B700BBA89F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6E8A90F21F4434D500E08023 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		6E8A90F61F4444C000E08023 /* FIRImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRImage.swift; sourceTree = "<group>"; };
+		6E8A90F91F4492A700E08023 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EF246391F3DB2F50079F8E6 /* socialNewsIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialNewsIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF2463C1F3DB2F50079F8E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF2463E1F3DB2F50079F8E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,12 +88,12 @@
 			isa = PBXGroup;
 			children = (
 				6E61E72E1F4191A700BBA89F /* Model */,
-				6E61E72B1F41865C00BBA89F /* GoogleService-Info.plist */,
 				6EF2463C1F3DB2F50079F8E6 /* AppDelegate.swift */,
 				6EF2463E1F3DB2F50079F8E6 /* ViewController.swift */,
 				6EF246401F3DB2F50079F8E6 /* Main.storyboard */,
 				6EF246461F3DB2F50079F8E6 /* Assets.xcassets */,
 				6EF246481F3DB2F50079F8E6 /* LaunchScreen.storyboard */,
+				6E8A90F91F4492A700E08023 /* GoogleService-Info.plist */,
 				6EF2464B1F3DB2F50079F8E6 /* Info.plist */,
 				6EF246431F3DB2F50079F8E6 /* socialNewsIO.xcdatamodeld */,
 				6E8A90F21F4434D500E08023 /* FirebaseReference.swift */,
