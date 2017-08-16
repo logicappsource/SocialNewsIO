@@ -11,12 +11,12 @@ import Firebase
 
 class FIRImage
 {
-    var image: UIImage?
+    var image: UIImage
     var downloadURl: URL?
     var downloadLink: String!
     var ref: StorageReference!
     
-    init(init: UIImage) {
+    init(image: UIImage) {
         self.image = image
     }
     
@@ -25,7 +25,8 @@ class FIRImage
 
 extension FIRImage
 {
-    func saveProfileImage(_ userUID: String, _ completion: @escaping (Error?) -> Void) {
+    func saveProfileImage(_ userUID: String, _ completion: @escaping (Error?) -> Void)
+    {
         
     }
     

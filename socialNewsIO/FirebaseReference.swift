@@ -7,34 +7,30 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
+enum DTDatabaseReference
+{
 
-
-
-enum DatabaseReference {
-
+    case root
+    case users(uid: String)
+    case media   //Posts
+    case chats
+    case messages
     
-  case root
-  case users(uid: String)
-  case media  // Post
-  case chats // Chats
-  case messages
-    
-
-    // MARK : -  Public
+    // MARK - Public
     
     func reference() -> DatabaseReference {
-        return ref.child(path)
+        return rootRef.child(path)
     }
     
-    private var  ref: DatabaseReference {
+    private var rootRef: DatabaseReference {
         return Database.database().reference()
     }
-  
     
+
     private var path: String {
-        
         switch self {
         case .root:
             return ""
@@ -48,12 +44,38 @@ enum DatabaseReference {
             return "messages"
         default:
             return ""
-            
         }
-        
+    }
+
+}
+
+
+enum DTStorageReference {
+    
+    case root
+    case images         //for Post
+    case profileImages // For User
+    
+    func reference() -> StorageReference {
+        return baseRef.child(path)
     }
     
+    private var baseRef: StorageReference {
+        return Storage.storage().reference()
+    }
     
+    private var path: String{
+        switch self {
+        case .root:
+            return ""
+        case .images:
+            return "images"
+        case .profileImages:
+            return "profileImages"
+        
+        }
+    }
     
+  
     
 }

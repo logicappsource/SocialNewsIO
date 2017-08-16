@@ -4,7 +4,7 @@
 //
 //  Created by LogicAppSourceIO on 11/08/2017.
 //  Copyright © 2017 Logicappsource. All rights reserved.
-//https://www.ductran.co/products/socialize-your-apps-2017/categories/237578/posts/720849
+
 
 import UIKit
 import CoreData

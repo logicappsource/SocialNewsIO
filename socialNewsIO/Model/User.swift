@@ -7,7 +7,8 @@
 // 1. bug is the reference to FIREBASE
 
 import Foundation
-import Firebase
+import FirebaseDatabase
+import UIKit
 
 class User
 {
@@ -20,14 +21,16 @@ class User
     var follows: [User]
     var followedBy: [User]
 
+    // MARK: - Initializers
 
-
-    init(uid:String, username: String, fullName: String, bio: String, website: String, profileImage: UIImage?, follows: [User], followedBy: [User]) {
+    init(uid: String, username: String, fullName: String, bio: String, website: String, follows: [User], followedBy: [User], profileImage: UIImage?) {
         self.uid = uid
         self.username = username
         self.fullName = fullName
         self.bio = bio
         self.website = website
+        self.follows = follows
+        self.followedBy = followedBy
         self.profileImage = profileImage
     }
 
@@ -37,25 +40,25 @@ class User
     func save()  {
         
         //1. Reference pointing to Dict
-        let ref = DatabaseReference.users(uid: uid).reference()
+        let ref = DTDatabaseReference.users(uid: uid).reference()
         ref.setValue(toDictionary)
         
-        // 2 - save follows
+        //2. - save follows
         for user in follows { // Set Val
-            ref.child("follows/\(user.uid)").setValue(toDictionary())
+            ref.child("follows/\(user.uid)").setValue(user.toDictionary())
         }
         
-        //3 - save followed by "followedby"
+        //3. - save followed by "followedby"
         for user in followedBy {
             ref.child("followedBy/\(user.uid)").setValue(user.toDictionary())
         }
         
-        //4 - save the profile image
+        //4. - save the profile image
         
         
     }
 
-    func toDictionary() -> [String: Any] {
+    func toDictionary() -> [String: Any] { //Return to dict
             return [
                 "uid":uid,
                 "username": username,
