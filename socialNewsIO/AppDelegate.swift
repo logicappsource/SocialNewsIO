@@ -4,10 +4,11 @@
 //
 //  Created by LogicAppSourceIO on 11/08/2017.
 //  Copyright © 2017 Logicappsource. All rights reserved.
-//
+//https://www.ductran.co/products/socialize-your-apps-2017/categories/237578/posts/720849
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+    
+        
         return true
     }
 
