@@ -70,16 +70,16 @@ class User
         
         //1. Reference pointing to Dict
         let ref = DTDatabaseReference.users(uid: uid).reference()
-        ref.setValue(toDictionary)
+        ref.setValue(toDictionary()) // Bug in console
         
         //2. - save follows
         for user in follows { // Set Val
-            ref.child("follows/\(user.uid)").setValue(user.toDictionary())
+            ref.child("follows/\(user.uid)").setValue(user.toDictionary()) // Set val bug occur
         }
         
         //3. - save followed by "followedby"
         for user in followedBy {
-            ref.child("followedBy/\(user.uid)").setValue(user.toDictionary())
+            ref.child("followedBy/\(user.uid)").setValue(user.toDictionary()) // Set val bug occur
         }
         
         //4. - save the profile image

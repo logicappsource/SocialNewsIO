@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
     
-        let dummyUser = User(uid: "12", username: "tolo", fullName: "fds", bio: "fdsf", website: "fdsq", follows: [], followedBy: [], profileImage: UIImage(named: "1" ))
+        let dummyUser = User(uid: "12", username: "tolo", fullName: "fds", bio: "fdsf", website: "fdsq", follows: [], followedBy: [], profileImage: UIImage(named: "" ))
         dummyUser.save { (error) in
             print(error)
         }
