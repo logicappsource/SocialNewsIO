@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gvi-kp-khj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IzA-Z7-0ql">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -301,10 +301,10 @@
             </objects>
             <point key="canvasLocation" x="2111" y="922"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Profile-->
         <scene sceneID="5G7-6n-z3z">
             <objects>
-                <tableViewController id="AnD-Po-f3V" sceneMemberID="viewController">
+                <tableViewController id="AnD-Po-f3V" customClass="ProfileVC" customModule="socialNewsIO" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f8K-7Y-v8a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,7 +324,13 @@
                             <outlet property="delegate" destination="AnD-Po-f3V" id="UTJ-SM-wbJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="j4e-J1-RgS"/>
+                    <navigationItem key="navigationItem" title="Profile" id="j4e-J1-RgS">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out " id="6ST-ps-3QI">
+                            <connections>
+                                <action selector="logOutDidTap:" destination="AnD-Po-f3V" id="HiZ-Ty-7dv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8l-c2-7cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -333,7 +339,7 @@
         <!--Item-->
         <scene sceneID="B0R-BW-heG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ab-Zm-CK2" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ab-Zm-CK2" customClass="Pro" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="icon-profile" selectedImage="icon-profile-filled" id="UQN-Ry-WkF">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
@@ -577,6 +583,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fhh-b9-msS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2949.5999999999999" y="-646.32683658170924"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="vGb-Rf-51T">
+            <objects>
+                <viewController id="y6b-LM-0l8" customClass="LoginViewController" customModule="socialNewsIO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aqR-o7-JPN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ke-eo-zuC">
+                                <rect key="frame" x="27" y="301" width="321" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E4I-fT-t1t">
+                                <rect key="frame" x="27" y="354" width="321" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmS-Z2-Nz6">
+                                <rect key="frame" x="154" y="446" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="login"/>
+                                <connections>
+                                    <action selector="loginBtnTap:" destination="y6b-LM-0l8" eventType="touchUpInside" id="4cH-5i-OYh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="I99-m3-Wt4"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTxtField" destination="E4I-fT-t1t" id="2UU-Vt-MSW"/>
+                        <outlet property="usernameTxtField" destination="7ke-eo-zuC" id="Ldx-Eb-a7H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kzL-8N-3uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Item" image="icon-back" id="D7k-uL-Vvc">
+                    <connections>
+                        <action selector="backDidTap:" destination="cDI-gu-cJh" id="3ka-6q-vnV"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="3656.8000000000002" y="-646.32683658170924"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OzO-78-KR9">
