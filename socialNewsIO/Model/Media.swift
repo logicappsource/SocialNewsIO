@@ -4,7 +4,6 @@
 //
 //  Created by LogicAppSourceIO on 18/08/2017.
 //  Copyright © 2017 Logicappsource. All rights reserved.
-//  Could be possible due to comment class should be in DBREference switch statement.
 
 import UIKit
 import Firebase
@@ -33,7 +32,7 @@ class Media {
     
     
     func save(completion: @escaping (Error?) -> Void ) {
-        let ref = DTDatabaseReference.media.reference().child(uid)
+        var ref = DTDatabaseReference.media.reference().child(uid)
         ref.setValue(toDictionary())
 
         // Save Likes
@@ -46,7 +45,7 @@ class Media {
         }
         
         // Upload Images to storage Databse
-        let firImage = FIRImage(image: mediaImage)
+        var firImage = FIRImage(image: mediaImage)
         firImage.save(self.uid) { (error) in
             completion(error)
         }
@@ -66,19 +65,30 @@ class Media {
 }
 
 
+extension Media {
+    
+    func downloadMediaImage(completion: @escaping (UIImage?, Error?) -> Void) {
+        FIRImage.downloadImage(uid: uid) { (image, error) in
+            completion(image,error)
+        }
+    }
+}
+
+
 
 class Comment {
     var mediaUID: String
-    var uid: String
-    var createdTime: Double
     var from: User
+    var uid: String
     var caption: String
-    var ref: DTDatabaseReference // Could be DT
+    var createdTime: Double
+    var ref: DTDatabaseReference? // Could be DT
     
     init(mediaUID: String, from: User, caption: String) {
         self.mediaUID = mediaUID
         self.from = from
         self.caption = caption
+        
         self.createdTime = Date().timeIntervalSince1970
         
         let ref = DTDatabaseReference.media.reference().child("\(mediaUID)/comments").childByAutoId()
@@ -89,8 +99,9 @@ class Comment {
         uid = dictionary["uid"] as! String
         createdTime = dictionary["createdTime"] as! Double
         caption = dictionary["caption"] as! String
-        
+  
         let fromDictionary = dictionary["from"] as! [String: Any]
+        
         from = User(dictionary: fromDictionary)
         
         mediaUID = dictionary["mediaUID"] as! String
@@ -99,7 +110,7 @@ class Comment {
     
     func save() {
 //       ref.reference().setValue(toDictionary())  // Resolving a bug
-        let ref = DTDatabaseReference.media.reference().child("\(mediaUID)/comments/\(uid)")
+        var ref = DTDatabaseReference.media.reference().child("\(mediaUID)/comments/\(uid)")
         ref.setValue(toDictionary())
     }
     
@@ -115,14 +126,6 @@ class Comment {
     }
 }
 
-extension Media {
-    
-    func downloadMediaImage(completion: @escaping (UIImage?, Error?) -> Void) {
-        FIRImage.downloadImage(uid: uid) { (image, error) in
-                completion(image,error)
-        }
-    }
-}
 
 
 /*
