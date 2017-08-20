@@ -10,6 +10,11 @@ import UIKit
 import Firebase
 class WelcomeVC: UIViewController {
 
+    @IBAction func loginVC(_ sender: Any) {
+        performSegue(withIdentifier: "loginDirect", sender: self)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -15,6 +15,7 @@
 		6E6538941F458608004B2488 /* ImagePickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6538931F458608004B2488 /* ImagePickerHelper.swift */; };
 		6E65389A1F45AF83004B2488 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6538991F45AF83004B2488 /* LoginViewController.swift */; };
 		6E6C8B101F46D5C200D48008 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C8B0F1F46D5C200D48008 /* ProfileVC.swift */; };
+		6E6C8B121F46D98900D48008 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C8B111F46D98900D48008 /* Media.swift */; };
 		6E8A90F31F4434D500E08023 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A90F21F4434D500E08023 /* FirebaseReference.swift */; };
 		6E8A90F71F4444C000E08023 /* FIRImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A90F61F4444C000E08023 /* FIRImage.swift */; };
 		6EF2463D1F3DB2F50079F8E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2463C1F3DB2F50079F8E6 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 		6E6538951F45AD57004B2488 /* socialNewsIO.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = socialNewsIO.entitlements; sourceTree = "<group>"; };
 		6E6538991F45AF83004B2488 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6E6C8B0F1F46D5C200D48008 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		6E6C8B111F46D98900D48008 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		6E8A90F21F4434D500E08023 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		6E8A90F61F4444C000E08023 /* FIRImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRImage.swift; sourceTree = "<group>"; };
 		6EF246391F3DB2F50079F8E6 /* socialNewsIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialNewsIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 				6E8A90F21F4434D500E08023 /* FirebaseReference.swift */,
 				6E61E72F1F4191B700BBA89F /* User.swift */,
 				6E8A90F61F4444C000E08023 /* FIRImage.swift */,
+				6E6C8B111F46D98900D48008 /* Media.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				6E61E7301F4191B700BBA89F /* User.swift in Sources */,
 				6E6538921F457FE9004B2488 /* WelcomeVC.swift in Sources */,
 				6E8A90F31F4434D500E08023 /* FirebaseReference.swift in Sources */,
+				6E6C8B121F46D98900D48008 /* Media.swift in Sources */,
 				6E6538901F457FC9004B2488 /* SignUpTableViewController.swift in Sources */,
 				6E65389A1F45AF83004B2488 /* LoginViewController.swift in Sources */,
 			);

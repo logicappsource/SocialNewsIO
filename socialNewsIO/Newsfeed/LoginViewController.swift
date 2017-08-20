@@ -12,6 +12,8 @@ import Firebase
 class LoginViewController: UIViewController {
 
 
+    //Alert user if nothing is typed or if creds is wrong
+    
     
     
     override func viewDidLoad() {
